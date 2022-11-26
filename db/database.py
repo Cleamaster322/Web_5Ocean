@@ -32,13 +32,19 @@ class Database:
             for row in rows:
                 result.append(row[0])
             return result
-
-    # def add_categoty(self,name):
-    #     with self.get_db_connection() as conn:
-    #         cur = conn.cursor()
-    #         # parameters = name
-    #         cur.execute(insert_category,name)
-    #         conn.commit()
+    
+    def select_category_and_food(self):
+        result = {}
+        with self.get_db_connection() as conn:
+            cur = conn.cursor()
+            cur.execute(select_category_and_food)
+            rows = cur.fetchall()
+            for row in rows:
+                try:
+                    result[row[0]].append(row[1])
+                except:
+                    result[row[0]] = [row[1]]
+        return result
 
 
     def add_food(self,Name,Price,Description,idCategory):
