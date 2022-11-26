@@ -9018,7 +9018,7 @@ a:hover {
 }
 
 .mt-blog-detail.style1 .blog-post.style2 .blog-txt p {
-  margin: 0 0 30px;
+  margin: 0 0 3px;
 }
 
 .mt-blog-detail.style1 .blog-post.style2 .blog-nav {
@@ -9719,7 +9719,7 @@ a:hover {
   top: auto;
   bottom: 0;
   right: 0;
-  width: 59px;
+  width: 180px;
   height: 4px;
   background: #494949;
 }

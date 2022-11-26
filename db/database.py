@@ -60,7 +60,6 @@ class Database:
         return result
 
     def select_category_and_hisfood(self,category):
-        print(f"{category}")
         result = {f"{category}":[]}
         with self.get_db_connection() as conn:
             cur = conn.cursor()
@@ -70,3 +69,24 @@ class Database:
             for row in rows:
                 result[category].append(row[1])
             return result
+
+    def select_food_info(self):
+        result = {}
+        with self.get_db_connection() as conn:
+            cur = conn.cursor()
+            cur.execute(select_food_info)
+            rows = cur.fetchall()
+            for row in rows:
+                result[row[0]] = {"protein":row[1],"fats":row[2],"carbohydrates":row[3],"kilocolories":row[4]}
+        return result
+    
+    def select_food_disc(self):
+        result = {}
+        with self.get_db_connection() as conn:
+            cur = conn.cursor()
+            cur.execute(select_food_disc)
+            rows = cur.fetchall()
+            for row in rows:
+                result[row[0]] = {"disc":row[1]}
+        return result
+        

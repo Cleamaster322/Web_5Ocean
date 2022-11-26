@@ -15,11 +15,15 @@ insert_eats = """INSERT INTO eats (Name,Price,Description,idCategory) VALUES(?,?
 
 select_category = """SELECT NameCat FROM Category"""
 
-select_categorys_and_food = """SELECT category.NameCat,eats.NameFood  FROM Category JOIN
+select_categorys_and_food = """SELECT category.NameCat,eats.NameFood  FROM Category LEFT JOIN
 Eats ON Eats.idCategory = Category.id
 order by category.id"""
 
 select_category_and_his_food = """SELECT category.NameCat,eats.NameFood  FROM Category JOIN Eats ON Eats.idCategory = Category.id WHERE(category.NameCat = '?')"""
+
+select_food_info = """SELECT Eats.NameFood,Eats.proteins,Eats.fats,Eats.carbohydrates,Eats.kilocolories FROM Eats"""
+
+select_food_disc = """SELECT Eats.NameFood, Eats.Description FROM Eats"""
 
 
 
