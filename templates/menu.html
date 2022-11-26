@@ -27,7 +27,10 @@
                 <h2>{{food}}</h2>
                 <p style="font-weight: 500;" >Белки: {{foodInfoAll[food]["protein"]}}. Жиры: {{foodInfoAll[food]["fats"]}}</p>
                 <p style="font-weight: 500;" >Углеводы: {{foodInfoAll[food]["carbohydrates"]}}. ККал: {{foodInfoAll[food]["kilocolories"]}}</p>
-                <p><h2>Описание</h2> <h3>{{foodInfoAll[food]["Description"]}}</h3></p>
+                <h2>Описание</h2> 
+                <h3>{{foodInfoAll[food]["Description"]}}</h3>
+                <h2>Цена</h2>
+                <p style="font-weight: 500;">{{foodInfoAll[food]["price"]}} рублей</p>
               </div>
             </article>
             {% endif %}
