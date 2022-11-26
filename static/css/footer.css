@@ -4,18 +4,19 @@ body{
 .footer_line{
     background-color:rgba(121, 119, 119, 0.801);
     height:150px;
-    justify-content: center;
+    justify-content:center;
     align-items: center;
-    display: block;
-    margin-top: 50%
+    display: flex;
+    margin-top: 50%;
+    flex-direction: column
 }
 .fa {
     padding: 15px;
-    padding-bottom: 35%;
     font-size: 30px;
-    width: 100%;
+    width: 50px;
     text-align: center;
     text-decoration: none;
+    margin: 10px 5px;
   }
   
  
