@@ -13,7 +13,7 @@ insert_category = """INSERT INTO category (name) VALUES (?)"""
 
 insert_eats = """INSERT INTO eats (Name,Price,Description,idCategory) VALUES(?,?,?,?)"""
 
-select_category = """SELECT Name FROM Category"""
+select_category = """SELECT NameCat FROM Category"""
 
 select_category_and_food = """SELECT category.NameCat,eats.NameFood  FROM Category JOIN
 Eats ON Eats.idCategory = Category.id
