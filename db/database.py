@@ -89,4 +89,25 @@ class Database:
             for row in rows:
                 result[row[0]] = {"disc":row[1]}
         return result
+    
+    def select_food_full_info(self):
+        result = {}
+        with self.get_db_connection() as conn:
+            cur = conn.cursor()
+            cur.execute(select_food_full_info)
+            rows = cur.fetchall()
+            for row in rows:
+                # row[0] - NameFood
+                result[row[1]]={"idfood":row[0],
+                                "Description":row[2],
+                                "cookingMethod":row[3],
+                                "foodValue":row[4],
+                                "price":row[5],
+                                "protein":row[6],
+                                "fats":row[7],
+                                "carbohydrates":row[8],
+                                "kilocolories":row[9],
+                                "CategoryFood":row[10],
+                                }
+        return result
         
