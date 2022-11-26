@@ -17,26 +17,29 @@
       <div class="container">
         <div class="row">
           <div class="col-xs-12 col-sm-8 wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
+            {% for food in categorysandfood[categoryName] %}
             <article class="blog-post style2">
               <div class="img-holder">
                 <a href=""><img src="../static/photo/see.jpg" alt="image description"></a>
               </div>
               <div class="blog-txt">
-                <h2><a href="">Название</a></h2>
-                <p>Description</p>
+                <h2><a href="">{{food}}</a></h2>
+                <p></p>
                 <p style="font-weight: 500;" >Калории:</p>
               </div>
             </article>
+            {% endfor %}
           </div>
           <div class="col-xs-12 col-sm-4 text-right sidebar wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
             <!-- Category Widget of the Page -->
             <section class="widget category-widget">
               <h3>Категории</h3>
               <ul class="list-unstyled widget-nav">
-                <li><a href="#">Еда</a></li>
-                <li><a href="#">Вода</a></li>
-                <li><a href="#">Я</a></li>
-                <li><a href="#">уже не жива</a></li>
+                {% for cat in categorysAll%}
+                {% if cat != categoryName%}
+                <li><a href="#">{{cat}}</a></li>
+                {% endif %}
+                {% endfor %}
               </ul>
             </section>
           </div>

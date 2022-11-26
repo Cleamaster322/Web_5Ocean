@@ -1,4 +1,4 @@
-from flask import Flask, render_template,redirect,session,request
+from flask import Flask, render_template,redirect,session,request,url_for
 from db.database import Database
 
 menu = [{"name":"Крабы","url":"crabs"},
@@ -14,6 +14,7 @@ DATABASE = "db/5_Ocean.db"
 
 db = Database(DATABASE)
 db.init_db()
+
 
 # count = db.get_colons()
 # print(count)
@@ -37,6 +38,11 @@ def categorysandfood():
     categorysandfood = db.select_category_and_food()
     return render_template('categorysandfood.html',categ = categorysandfood)
 
+@app.route("/menu/<category>")
+def menu(category):
+    categorysAll = db.select_category()
+    categorysandfood = db.select_category_and_food()
+    return  render_template("menu.html",categorysandfood = categorysandfood,categoryName = category,categorysAll=categorysAll)
 
 # @app.route("/crabs")
 # def crabs():
