@@ -27,6 +27,17 @@
         <h1 class = "colormy">Ресторан морепродуктов</h1>
         <p class="lead colormy">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores nihil natus officiis, modi sunt recusandae dicta et optio. Beatae incidunt mollitia ea, impedit facilis laudantium placeat debitis nemo quas asperiores.</p>
         <a href="./menu.html" class="bn3637 bn36">Заказать</a>
+        <form action="/" method="post">
+        <p><label>Название:</label><input type="text" name = "food_name" value="" required />
+        <p><label>Цена:</label><input type="text" name = "Price" value="" required />
+        <p><label>Описание:</label><input type="text" name = "Description" value="" required />
+        <p><label>Категория:</label><select name="category">
+            {% for cat in categorys -%}
+            <option value="{{cat}}">{{cat}}</option>
+            {% endfor -%}
+            </select></p>
+        <p><input type="submit" value="Отправить">
+        </form>
          
     </main>
     </div>
