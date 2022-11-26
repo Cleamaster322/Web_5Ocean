@@ -8,8 +8,14 @@
 </head>
 <body>
     <h1>sdadsa</h1>
-    {% for categ in categoryandfood %}
-    <div>{{categ}}</div>
+    {% for cat in categ %}
+    <div>
+        <ul>{{cat}}
+        {% for food in categ[cat]%}
+        <li>{{food}}</li>
+        {% endfor %}
+        </ul>
+    </div>
     {% endfor %}
 </body>
 </html>
