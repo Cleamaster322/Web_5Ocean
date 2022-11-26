@@ -11,7 +11,6 @@
 <body>
     <header class="mb-auto">
         <div>
-            <h3 class="float-md-start mb-0 colormy">Пятый Океан</h3>
         <nav class="colormy nav nav-masthead justify-content-center float-md-end">
             <a href="#" class="nav-link">Меню</a>
             <a href="#" class="nav-link">Контакты</a>
@@ -37,36 +36,18 @@
 </div>
 <form action="" method = "post">
  <div class="card_design_cnt">
+        {% for category in categorys %}
         <div class="crd_dsgn">
             <a href="./menu.html">
                 <div class="crd_img">
                     <img src="https://animeshka.org/uploads/posts/2022-09/1663969241_32-animeshka-org-p-barramundi-fish-yeda-vkontakte-51.jpg" alt="">
                 </div>
                 <div class="crd_hdng">
-                    <a href = "./menu.html" name = ""><h5>Блюда из рыбы</h5></a>
+                    <a href = "./menu.html" name = ""><h5>{{category}}</h5></a>
                 </div>
             </a>
-        </div>    
-        <div class="crd_dsgn">
-            <a href="./menu.html">
-                <div class="crd_img">
-                    <img src="https://animeshka.org/uploads/posts/2022-09/1663969241_32-animeshka-org-p-barramundi-fish-yeda-vkontakte-51.jpg" alt="">
-                </div>
-                <div class="crd_hdng">
-                    <a href = "./menu.html" name = ""><h5>Блюда не из рыбы</h5></a>
-                </div>
-            </a>
-        </div>    
-        <div class="crd_dsgn">
-            <a href="./menu.html">
-                <div class="crd_img">
-                    <img src="https://animeshka.org/uploads/posts/2022-09/1663969241_32-animeshka-org-p-barramundi-fish-yeda-vkontakte-51.jpg" alt="">
-                </div>
-                <div class="crd_hdng">
-                    <a href = "./menu.html" name = ""><h5>Блюда</h5></a>
-                </div>
-            </a>
-        </div>    
+        </div>  
+        {% endfor %}
  </div>
 </form>
 </body>

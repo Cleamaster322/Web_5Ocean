@@ -11,7 +11,6 @@
 .hero-order{
     height: 573px;
     width: 100%;
-    display: table;
 }
 .px-3{
     padding: 150px 0;
@@ -156,7 +155,7 @@ li{
     height: 50px;
     padding: 0 20px;
     line-height: 50px;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: normal;
     color: rgb(0, 0, 0);
     text-transform: uppercase;
@@ -169,10 +168,10 @@ li{
 .crd_dsgn:hover { background-color: #c2986b; border-width: 3px;}
 .crd_dsgn:hover .crd_img img { transform: scale(1.5); }
 .card_design_cnt{
-    display: flex;
     justify-content: center;
     justify-content: center;
     margin-top: 30px;
+    margin-left: 10%;
     font-size: 14px;
     font-family: 'Lato', sans-serif;
     padding: 5%;

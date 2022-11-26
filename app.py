@@ -21,11 +21,11 @@ db.init_db()
 
 @app.route("/", methods = ["POST","GET"])
 def index():
-    # categorys = db.select_category()
+    categorys = db.select_category()
     if request.method == "POST":
         print(request.form)
         # db.add_food(request.form["food_name"],request.form["Price"],request.form["Description"],request.form["idCategory"])
-    return render_template('index.html')
+    return render_template('index.html',categorys = categorys, lenght = len(categorys))
 
 @app.route("/categorys")
 def categorys():
@@ -35,7 +35,7 @@ def categorys():
 @app.route("/categorysandfood")
 def categorysandfood():
     categorysandfood = db.select_category_and_food()
-    return render_template('categorysandfood.html',categorysandfood = categorysandfood)
+    return render_template('categorysandfood.html',categ = categorysandfood)
 
 
 # @app.route("/crabs")
