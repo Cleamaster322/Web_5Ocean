@@ -32,20 +32,6 @@ class Database:
             for row in rows:
                 result.append(row[0])
             return result
-    
-    def select_category_and_food(self):
-        result = {}
-        with self.get_db_connection() as conn:
-            cur = conn.cursor()
-            cur.execute(select_category_and_food)
-            rows = cur.fetchall()
-            for row in rows:
-                try:
-                    result[row[0]].append(row[1])
-                except:
-                    result[row[0]] = [row[1]]
-        return result
-
 
     def add_food(self,Name,Price,Description,idCategory):
         with self.get_db_connection() as conn:
@@ -59,3 +45,28 @@ class Database:
             row = cur.fetchone()
             names = row.keys()
             return names
+
+    def select_category_and_food(self):
+        result = {}
+        with self.get_db_connection() as conn:
+            cur = conn.cursor()
+            cur.execute(select_categorys_and_food)
+            rows = cur.fetchall()
+            for row in rows:
+                try:
+                    result[row[0]].append(row[1])
+                except:
+                    result[row[0]] = [row[1]]
+        return result
+
+    def select_category_and_hisfood(self,category):
+        print(f"{category}")
+        result = {f"{category}":[]}
+        with self.get_db_connection() as conn:
+            cur = conn.cursor()
+            cur.execute(f"""SELECT category.NameCat,eats.NameFood  FROM Category JOIN Eats ON Eats.idCategory = Category.id WHERE(category.NameCat = '{category}')""")
+            
+            rows = cur.fetchall()
+            for row in rows:
+                result[category].append(row[1])
+            return result
