@@ -1,55 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="../static/css/style.css" rel = "stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="../static/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
+
 <body>
-    <header class="mb-auto">
-        <div>
-        <nav class="colormy nav nav-masthead justify-content-center float-md-end">
-            <a href="#" class="nav-link">Меню</a>
-            <a href="#" class="nav-link">Контакты</a>
-            <a href="#" class="nav-link" >О нас</a>
-        </nav>
-        </div>
-        </header>
     <div class="hero-order bg-img">
         <div class="container">
             <div class="container main-info">
-    <main class = "px-3">
-       <img src="../static/photo/img.svg" alt="" >
-        <!-- <h1 class = "colormy">Ресторан морепродуктов</h1>-->
-        <p class="lead colormy">Морепродукты за разумные деньги</p> 
-        <div class="btngroup">
-        <a href="./menu.html" class="bn3637 bn36">Меню</a>
-        <a href="./menu.html" class="bn3637 bn36">Доставка</a>
-        <a href="./menu.html" class="bn3637 bn36">Адрес</a>
+                <main class="px-3">
+                    <img src="../static/photo/img.svg" alt="">
+                    <!-- <h1 class = "colormy">Ресторан морепродуктов</h1>-->
+                    <p class="lead colormy">Морепродукты за разумные деньги</p>
+                    <div class="btngroup">
+                        <a class="bn3637 bn36" id="btnmenu" href="#menu">Меню</a>
+                        <a href="./menu.html" class="bn3637 bn36">Доставка</a>
+                        <a href="#aboutus" class="bn3637 bn36">О нас</a>
+                        <a href="#contact" class="bn3637 bn36">Контакты</a>
+                    </div>
+                </main>
+            </div>
+        </div>
     </div>
-    </main>
+    <!-- <p style = "padding-top: 15px; text-align: center;">Ресторан морепродуктов на самом берегу спортивной набережной Владивостока, открывший двери в 2004 году, радующий и удивляющей своих гостей по сей день.</p> -->
+     <a href="" id="menu"></a>
+     <p class="leadme colormy2">Категории</p>
+    <form action="" method="post">
+       
+        <div class="card_design_cnt">
+            {% for category in categorys %}
+            <div class="crd_dsgn">
+                <a href="./menu.html">
+                    <div class="crd_img">
+                        <img src="https://animeshka.org/uploads/posts/2022-09/1663969241_32-animeshka-org-p-barramundi-fish-yeda-vkontakte-51.jpg"
+                            alt="">
+                    </div>
+                    <div class="crd_hdng">
+                        <a href="./menu.html" name="">
+                            <h5>{{category}}</h5>
+                        </a>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </form>
+    <p class="aboutus">О нас</p>
+    <div class="container3">
+        <div class="box">
+            <img src="https://sun9-29.userapi.com/impg/c858336/v858336691/1976ac/22xkwjmxfKs.jpg?size=1080x1080&quality=96&sign=58c6dc5efc3d892a135316839383bba6&type=album"
+                style="object-fit: cover;
+      object-position: 50% 50%;">
+            <span>Приятная атмосфера</span>
+        </div>
+        <div class="box">
+            <img
+                src="https://sun9-69.userapi.com/impg/AhAaKbIpG7v35Iyught1wlccxoRj8BDyYBvqWA/MahUUIhkZ3c.jpg?size=2160x2160&quality=96&sign=184debf0bbfdda478f86032daeff4eeb&type=album">
+            <span>Красивые виды</span>
+        </div>
+        <div class="box">
+            <img
+                src="https://sun9-87.userapi.com/impg/c855232/v855232264/2356ee/eDPvAGnB_Gw.jpg?size=1000x686&quality=96&sign=1c851a0860d81f76e7b423c48d935471&type=album">
+            <span>Еда</span>
+        </div>
+        <div class="box">
+            <img src="https://srokgodnosti.ru/images/off-line/article/1390/5.jpg">
+            <span>Напитки</span>
+        </div>
     </div>
-</div>
-</div>
-<form action="" method = "post">
- <div class="card_design_cnt">
-        {% for category in categorys %}
-        <div class="crd_dsgn">
-            <a href="./menu/{{category}}">
-                <div class="crd_img">
-                    <img src="https://animeshka.org/uploads/posts/2022-09/1663969241_32-animeshka-org-p-barramundi-fish-yeda-vkontakte-51.jpg" alt="">
-                </div>
-                <div class="crd_hdng">
-                    <a href = "./menu/{{category}}" name = "{{category}}"><h5>{{category}}</h5></a>
-                </div>
-            </a>
-        </div>  
-        {% endfor %}
- </div>
-</form>
+    <p class="aboutus2">Контакты</p>
+    <div class="contact-wrapper">
+        <div class="col-md-4 col-sm-4">
+            <div class="contact-item">
+                <i class="bi bi-telephone-fill"></i>
+                <h2>Адрес</h2>
+                <p>Suite 02, Level 12, Sahera Tropical Center</p>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4" style = "text-align: center;">
+            <div class="contact-item">
+                <h2>Номер телефона</h2>
+                <p>+8801111111111,02-1234567</p>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4" style="text-align: right;">
+            <div class="contact-item">
+                <i class="flaticon-opened-email-envelope"></i>
+                <h2>Почта</h2>
+                <p>support@example</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="adress">
+        <div class="location" data-block="location">
+            <div class="frame">
+                <iframe id="google-map" class="google-map"
+                    data-base="https://www.google.com/maps/embed/v1/place?key=AIzaSyCNCmAGyN4bJYu5qeLgbASzZafm-M5TA_o&amp;language=ru&amp;zoom=16&amp;q="
+                    data-address="%D0%B3.%20%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%B2%D0%BE%D1%81%D1%82%D0%BE%D0%BA%2C%20%D1%83%D0%BB.%20%D0%91%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D0%B9%D0%BD%D0%B0%D1%8F%2C%20%D0%B4.%202%D0%B2"
+                    allowfullscreen="" title="Карта с адресом"
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCNCmAGyN4bJYu5qeLgbASzZafm-M5TA_o&amp;language=ru&amp;zoom=16&amp;q=%D0%B3.%20%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%B2%D0%BE%D1%81%D1%82%D0%BE%D0%BA%2C%20%D1%83%D0%BB.%20%D0%91%D0%B0%D1%82%D0%B0%D1%80%D0%B5%D0%B9%D0%BD%D0%B0%D1%8F%2C%20%D0%B4.%202%D0%B2"></iframe>
+            </div>
+            </div> 
+    </div>
+    <p class="aboutus2">Связаться с нами</p>
+                <div class="inner-column">
+                    <div class="contact-form">
+                        <form method="post" action="" id="contact-form" novalidate="novalidate">
+                            <div class="row clearfix">
+
+                                <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                    <textarea name="message" placeholder="Your Comment"></textarea>
+                                </div>
+
+                                <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                                    <input type="text" name="username" placeholder="Your Name" required="">
+                                </div>
+
+                                <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                                    <input type="email" name="email" placeholder="Your Email" required="">
+                                </div>
+
+                                <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                    <button type="submit" class="border-button">Отправить</button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+        </div>
+    </div>
+    </div>
+    </div>
 </body>
 <script src="menu.js"></script>
+
 </html>
