@@ -64,7 +64,7 @@ class Database:
         result = {f"{category}":[]}
         with self.get_db_connection() as conn:
             cur = conn.cursor()
-            cur.execute(f"""SELECT category.NameCat,eats.NameFood  FROM Category JOIN Eats ON Eats.idCategory = Category.id WHERE(category.NameCat = '{category}')""")
+            cur.execute(select_category_and_his_food, category)
             
             rows = cur.fetchall()
             for row in rows:
