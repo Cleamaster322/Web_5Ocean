@@ -1,3 +1,6 @@
+body{
+    overflow-x:hidden;
+}
 .hero-order.bg-img{
     background: #f25c04 url(../img/background2.jpg) no-repeat center bottom;
     background-size:cover;
