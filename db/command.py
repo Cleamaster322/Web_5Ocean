@@ -19,6 +19,8 @@ select_categorys_and_food = """SELECT category.NameCat,eats.NameFood  FROM Categ
 Eats ON Eats.idCategory = Category.id
 order by category.id"""
 
+select_category_and_his_food = """SELECT category.NameCat,eats.NameFood  FROM Category JOIN Eats ON Eats.idCategory = Category.id WHERE(category.NameCat = '?')"""
+
 
 
 
