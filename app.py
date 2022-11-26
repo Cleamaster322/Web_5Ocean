@@ -15,8 +15,6 @@ DATABASE = "db/5_Ocean.db"
 db = Database(DATABASE)
 db.init_db()
 
-
-
 # count = db.get_colons()
 # print(count)
 # db.add_food("dasd",3020,"dsad",1)
@@ -33,6 +31,11 @@ def index():
 def categorys():
     categorys = db.select_category()
     return render_template('categorys.html',categorys = categorys)
+    
+@app.route("/categorysandfood")
+def categorysandfood():
+    categorysandfood = db.select_category_and_food()
+    return render_template('categorysandfood.html',categorysandfood = categorysandfood)
 
 
 # @app.route("/crabs")
