@@ -32,7 +32,7 @@ body{
     width: 100%;
 }
 .px-3{
-    padding: 220px 0;
+    padding: 305px 0;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -334,11 +334,13 @@ textarea {
     font-family: 'Montserrat', sans-serif;
   }
   .description{
+    margin-top: 3%;
     display: flex;
     flex-direction: column;
     align-items: center;
     border: 2px solid;
     border-color: rgb(176, 176, 176);
-    width: 30%;
-    margin-left: 35%;
+    width: 50%;
+    margin-left: 25%;
+    /* padding-left: 100px; */
   }

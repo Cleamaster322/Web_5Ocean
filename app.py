@@ -14,8 +14,6 @@ DATABASE = "db/5_Ocean.db"
 
 db = Database(DATABASE)
 db.init_db()
-a = db.select_category()
-print(a)
 # count = db.get_colons()
 # print(count)
 # db.add_food("dasd",3020,"dsad",1)

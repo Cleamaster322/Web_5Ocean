@@ -19,27 +19,26 @@
 <div style="margin-top: 25px;">
   <a href="./index.html" style="text-decoration: none; color:black; margin-left: 190px; font-size: 20px; ">Back</a></div>
 
-<p class="aboutus2" style="margin-top: 10px!important; margin-bottom:10px!important">Категория</p>
+<p class="aboutus2" style="margin-top: 10px!important; margin-bottom:10px!important">{{categoryName}}</p>
    <form action="" method = "POST">
     <div class="mt-blog-detail style1">
       <div class="container">
         <div class="row">
           <div class="col-xs-12 col-sm-8 wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-            {% for food in categorysandfood[categoryName] %}
-            {% if food == None%}
-            <h2>А Ничего нет (</h2>
-            {% else %}
+            {% for food in foodInfoAll %}
+            {% if foodInfoAll[food]["CategoryFood"] == categoryName %}
             <article class="blog-post style2">
               <div class="img-holder">
                 <a href=""><img src="../static/photo/see.jpg" alt="image description"></a>
               </div>
               <div class="blog-txt">
                 <h2>{{food}}</h2>
-                <p style="font-weight: 500;" >Белки: {{foodInfo[food]["protein"]}}. Жиры: {{foodInfo[food]["fats"]}}</p>
-                <p style="font-weight: 500;" >Углеводы: {{foodInfo[food]["carbohydrates"]}}. ККал: {{foodInfo[food]["kilocolories"]}}</p>
-                <p><h2>Описание</h2> <h3>{{foodDisc[food]["disc"]}}</h3></p>
+                <p style="font-weight: 500;" >Белки: {{foodInfoAll[food]["protein"]}}. Жиры: {{foodInfoAll[food]["fats"]}}</p>
+                <p style="font-weight: 500;" >Углеводы: {{foodInfoAll[food]["carbohydrates"]}}. ККал: {{foodInfoAll[food]["kilocolories"]}}</p>
+                <p><h2>Описание</h2> <h3>{{foodInfoAll[food]["Description"]}}</h3></p>
               </div>
             </article>
+            {% endif %}
             {% endfor %}
           </div>
           <di v class="col-xs-12 col-sm-4 text-right sidebar wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
@@ -49,7 +48,7 @@
               <ul class="list-unstyled widget-nav">
                 {% for cat in categorysAll%}
                 {% if cat != categoryName%}
-                <li><a href="#">{{cat}}</a></li>
+                <li><a href="/menu/{{cat}}">{{cat}}</a></li>
                 {% endif %}
                 {% endfor %}
               </ul>
