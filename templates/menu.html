@@ -24,14 +24,18 @@
         <div class="row">
           <div class="col-xs-12 col-sm-8 wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
             {% for food in categorysandfood[categoryName] %}
+            {% if food == None%}
+            <h2>А Ничего нет (</h2>
+            {% else %}
             <article class="blog-post style2">
               <div class="img-holder">
                 <a href=""><img src="../static/photo/see.jpg" alt="image description"></a>
               </div>
               <div class="blog-txt">
-                <h2><a href="">{{food}}</a></h2>
-                <p></p>
-                <p style="font-weight: 500;" >Калории:</p>
+                <h2>{{food}}</h2>
+                <p style="font-weight: 500;" >Белки: {{foodInfo[food]["protein"]}}. Жиры: {{foodInfo[food]["fats"]}}</p>
+                <p style="font-weight: 500;" >Углеводы: {{foodInfo[food]["carbohydrates"]}}. ККал: {{foodInfo[food]["kilocolories"]}}</p>
+                <p><h2>Описание</h2> <h3>{{foodDisc[food]["disc"]}}</h3></p>
               </div>
             </article>
             {% endfor %}

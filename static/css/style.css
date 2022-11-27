@@ -3,7 +3,7 @@ body{
     overflow-x:hidden;
 }
 .hero-order.bg-img{
-    background: #f25c04 url(../img/background2.jpg) no-repeat center bottom;
+    background: #f25c04 url(../photo/b3.jpg) no-repeat center bottom;
     background-size:cover;
     background-position: 100%;
     background-repeat: repeat-y, repeat-y;
@@ -32,7 +32,7 @@ body{
     width: 100%;
 }
 .px-3{
-    padding: 150px 0;
+    padding: 220px 0;
     display: flex;
     justify-content: center;
     flex-direction: column;
