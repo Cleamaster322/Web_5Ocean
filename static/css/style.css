@@ -1,3 +1,4 @@
+
 body{
     overflow-x:hidden;
 }
@@ -242,6 +243,8 @@ a{
     margin: 0 2%;
     box-shadow: 0 20px 30px rgba(0,0,0,.1);
     line-height: 0;
+    text-decoration: none;
+    color: #000000;
   }
   
   .box > img {
@@ -329,4 +332,13 @@ textarea {
     border: 2px solid #353535;
     color: #292828;
     font-family: 'Montserrat', sans-serif;
+  }
+  .description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid;
+    border-color: rgb(176, 176, 176);
+    width: 30%;
+    margin-left: 35%;
   }

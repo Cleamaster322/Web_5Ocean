@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+    </style>
 </head>
 
 <body>
@@ -21,8 +26,9 @@
                     <!-- <h1 class = "colormy">Ресторан морепродуктов</h1>-->
                     <p class="lead colormy">Морепродукты за разумные деньги</p>
                     <div class="btngroup">
-                        <a class="bn3637 bn36" id="btnmenu" href="#menu">Меню</a>
-                        <a href="#aboutus" class="bn3637 bn36">О нас</a>
+                        <a class="bn3637 bn36" id="btnmenu" href="./Test.html">Забронировать</a>
+                        <a href="#aboutus" class="bn3637 bn36" >Меню</a>
+                        <a href="#aboutus" class="bn3637 bn36" >О нас</a>
                         <a href="#contact" class="bn3637 bn36">Контакты</a>
                     </div>
                 </main>
@@ -30,51 +36,33 @@
         </div>
     </div>
     <!-- <p style = "padding-top: 15px; text-align: center;">Ресторан морепродуктов на самом берегу спортивной набережной Владивостока, открывший двери в 2004 году, радующий и удивляющей своих гостей по сей день.</p> -->
-     <a href="" id="menu"></a>
-     <p class="leadme colormy2">Категории</p>
-    <form action="" method="post">
-       
-        <div class="card_design_cnt">
-            {% for category in categorys %}
-            <div class="crd_dsgn">
-                <a href="./menu/{{category}}">
-                    <div class="crd_img">
-                        <img src="https://animeshka.org/uploads/posts/2022-09/1663969241_32-animeshka-org-p-barramundi-fish-yeda-vkontakte-51.jpg"
-                            alt="">
-                    </div>
-                    <div class="crd_hdng">
-                        <a href="./menu/{{category}}" name="">
-                            <h5>{{category}}</h5>
-                        </a>
-                    </div>
-                </a>
-            </div>
-            {% endfor %}
-        </div>
-    </form>
     <a href="" id="aboutus"></a>
-    <p class="aboutus">О нас</p>
     <div class="container3">
-        <div class="box">
+        <a class="box" href = "./desc.html">
             <img src="https://sun9-29.userapi.com/impg/c858336/v858336691/1976ac/22xkwjmxfKs.jpg?size=1080x1080&quality=96&sign=58c6dc5efc3d892a135316839383bba6&type=album"
                 style="object-fit: cover;
       object-position: 50% 50%;">
-            <span>Приятная атмосфера</span>
-        </div>
-        <div class="box">
+            <span>Ресторан</span>
+        </a>
+        <a class="box" href = "./desc.html">
             <img
                 src="https://sun9-69.userapi.com/impg/AhAaKbIpG7v35Iyught1wlccxoRj8BDyYBvqWA/MahUUIhkZ3c.jpg?size=2160x2160&quality=96&sign=184debf0bbfdda478f86032daeff4eeb&type=album">
-            <span>Красивые виды</span>
-        </div>
-        <div class="box">
+            <span>Галерея</span>
+        </a>
+        <a class="box" href = "./menu.html">
             <img
                 src="https://sun9-87.userapi.com/impg/c855232/v855232264/2356ee/eDPvAGnB_Gw.jpg?size=1000x686&quality=96&sign=1c851a0860d81f76e7b423c48d935471&type=album">
-            <span>Еда</span>
-        </div>
-        <div class="box">
+            <span href = "./menu.html">Блюда</span>
+        </a>
+        <a class="box" href = "./menu.html">
             <img src="https://srokgodnosti.ru/images/off-line/article/1390/5.jpg">
             <span>Напитки</span>
-        </div>
+        </a>
+    </div>
+    <div class ="description">
+        <p style = "font-style: italic; font-weight: 600; font-size: 25px;">Пятый океан</p>
+        <p style="padding-left: 7%;">Ресторан морепродуктов на самом берегу спортивной набережной Владивостока, открывший двери в 2004 году, радующий и удивляющий своих гостей по сей день </p>
+
     </div>
     <a href="" id="contact"></a>
     <p class="aboutus2">Контакты</p>
