@@ -14,13 +14,11 @@ DATABASE = "db/5_Ocean.db"
 
 db = Database(DATABASE)
 db.init_db()
-a = db.select_category()
-print(a)
 # count = db.get_colons()
 # print(count)
 # db.add_food("dasd",3020,"dsad",1)
-
-@app.route("/", methods = ["POST","GET"])
+@app.route("/")
+@app.route("/main", methods = ["POST","GET"])
 def index():
     categorys = db.select_category()
     if request.method == "POST":
@@ -44,6 +42,13 @@ def menu(category):
     foodInfoAll = db.select_food_full_info()
     return  render_template("menu.html",categoryName = category,categorysAll=categorysAll,foodInfoAll=foodInfoAll)
 
+@app.route("/desc")
+def desc():
+    return render_template("desc.html")
+
+@app.route("/reserve")
+def reserve():
+    return render_template("reserve.html")
 # @app.route("/crabs")
 # def crabs():
 #     return render_template("crabs.html", menu = menu)

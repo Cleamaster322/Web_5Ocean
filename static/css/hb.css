@@ -9728,7 +9728,7 @@ a:hover {
   font-size: 18px;
   line-height: 20px;
   font-weight: 200;
-  margin: 0;
+  margin-left: 50%;
   overflow: hidden;
   padding: 0 4px 0 0;
   color: #494949;
@@ -12555,4 +12555,36 @@ a:hover, a:active, a:focus {
 
 .changer-active #style-changer {
   margin: 0;
+}
+.containercat{
+  width: 100%;
+  height: 40%;
+  background-color: #f8f8f8;
+  background-image: url(../img/ocr.jpeg);
+  background-size:cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.name_cat{
+   font-weight: 700;
+   font-size: 40px;
+   color: #494949;
+}
+.previous {
+  background-color: #f1f1f1;
+  color: black;
+}
+.round {
+  border-radius: 50%;
+}
+.btn_nazad {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+}
+
+.btn_nazad:hover {
+  background-color: #ddd;
+  color: black;
 }
