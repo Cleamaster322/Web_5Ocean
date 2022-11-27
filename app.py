@@ -17,8 +17,8 @@ db.init_db()
 # count = db.get_colons()
 # print(count)
 # db.add_food("dasd",3020,"dsad",1)
-
-@app.route("/", methods = ["POST","GET"])
+@app.route("/")
+@app.route("/main", methods = ["POST","GET"])
 def index():
     categorys = db.select_category()
     if request.method == "POST":

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Menu</title>
     <link rel="stylesheet" href="../static/css/hb.css">
     <link rel="stylesheet" href="../static/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -14,10 +14,11 @@
 <body>
   
   <div class="hero-order bg-img justify-content-center" style="height: 100px!important;">
+    
     <img src="../static/photo/img.svg" alt="" style="top: 0; width: 300px; height: 60px; margin-left: 25px">
 </div>
 <div style="margin-top: 25px;">
-  <a href="./index.html" style="text-decoration: none; color:black; margin-left: 190px; font-size: 20px; ">Back</a></div>
+  <a href="/main" style="text-decoration: none; color:black; margin-left: 190px; font-size: 20px; ">Back</a></div>
 
 <p class="aboutus2" style="margin-top: 10px!important; margin-bottom:10px!important">{{categoryName}}</p>
    <form action="" method = "POST">
@@ -29,7 +30,11 @@
             {% if foodInfoAll[food]["CategoryFood"] == categoryName %}
             <article class="blog-post style2">
               <div class="img-holder">
-                <a href=""><img src="../static/photo/see.jpg" alt="image description"></a>
+                {% if foodInfoAll[food]['imgPath'] != "error" %}
+                <a href=""><img src="../static/ImgFoot/{{foodInfoAll[food]['imgPath']}}.jpg" alt="image description"></a>
+                {% else %}
+                <a href=""><img src="../static/ImgFoot/error.png" alt="image description"></a>
+                {% endif %}
               </div>
               <div class="blog-txt">
                 <h2>{{food}}</h2>

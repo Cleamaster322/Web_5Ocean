@@ -37,6 +37,7 @@ SELECT Eats.ID,
         Eats.fats,
         Eats.carbohydrates,
         Eats.kilocolories,
+        Eats.imgPath,
 Category.NameCat FROM Eats LEFT join Category on eats.idCategory = Category.id """
 
 

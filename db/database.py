@@ -107,7 +107,8 @@ class Database:
                                 "fats":row[7],
                                 "carbohydrates":row[8],
                                 "kilocolories":row[9],
-                                "CategoryFood":row[10],
+                                "imgPath":row[10],
+                                "CategoryFood":row[11],
                                 }
         return result
         
