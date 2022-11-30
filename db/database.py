@@ -23,11 +23,28 @@ class Database:
             with self.get_db_connection() as conn:
                 conn.commit()
 
-    def select_category(self):
+    def select_one_category(self,category):
+        with self.get_db_connection() as conn:
+            cur = conn.cursor()
+            cur.execute(select_category, (category,))
+            row = cur.fetchone()
+            try:
+                for elem in row:
+                    return elem
+            except:
+                return -1
+
+    def insert_category(self,category):
+        with self.get_db_connection() as conn:
+            cur = conn.cursor()
+            cur.execute(insert_category,(category,))
+        return
+        
+    def select_all_categorys(self):
         result = []
         with self.get_db_connection() as conn:
             cur = conn.cursor()
-            cur.execute(select_category)
+            cur.execute(select_all_categorys)
             rows = cur.fetchall()
             for row in rows:
                 result.append(row[0])
