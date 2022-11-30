@@ -9,11 +9,13 @@ create_eats = """CREATE TABLE IF NOT EXISTS Eats (
     Description TEXT NOT NULL,
     idCategory TEXT REFERENCES Category (id) )"""
 
-insert_category = """INSERT INTO category (name) VALUES (?)"""
+insert_category = """INSERT INTO category (nameCat) VALUES (?)"""
 
 insert_eats = """INSERT INTO eats (Name,Price,Description,idCategory) VALUES(?,?,?,?)"""
 
-select_category = """SELECT NameCat FROM Category"""
+select_all_categorys = """SELECT NameCat FROM Category"""
+
+select_category = """SELECT NameCat From Category WHERE nameCat = ?"""
 
 select_categorys_and_food = """SELECT category.NameCat,eats.NameFood  FROM Category LEFT JOIN
 Eats ON Eats.idCategory = Category.id
@@ -40,7 +42,7 @@ SELECT Eats.ID,
         Eats.imgPath,
 Category.NameCat FROM Eats LEFT join Category on eats.idCategory = Category.id """
 
-
+"""SELECT NameCat From Category WHERE nameCat = ?"""
 
 # create_main = """CREATE TABLE IF NOT EXISTS Main(
 #    id INTEGER PRIMARY KEY,

@@ -20,7 +20,7 @@ db.init_db()
 @app.route("/")
 @app.route("/main", methods = ["POST","GET"])
 def index():
-    categorys = db.select_category()
+    categorys = db.select_all_categorys()
     if request.method == "POST":
         print(request.form)
         # db.add_food(request.form["food_name"],request.form["Price"],request.form["Description"],request.form["idCategory"])
@@ -28,7 +28,7 @@ def index():
 
 @app.route("/categorys")
 def categorys():
-    categorys = db.select_category()
+    categorys = db.select_all_categorys()
     return render_template('categorys.html',categorys = categorys)
     
 @app.route("/categorysandfood")
@@ -38,7 +38,7 @@ def categorysandfood():
 
 @app.route("/menu/<category>")
 def menu(category):
-    categorysAll = db.select_category()
+    categorysAll = db.select_all_categorys()
     foodInfoAll = db.select_food_full_info()
     return  render_template("menu.html",categoryName = category,categorysAll=categorysAll,foodInfoAll=foodInfoAll)
 
@@ -49,9 +49,15 @@ def desc():
 @app.route("/reserve")
 def reserve():
     return render_template("reserve.html")
-# @app.route("/crabs")
-# def crabs():
-#     return render_template("crabs.html", menu = menu)
+
+@app.route("/admins", methods = ["POST", "GET"])
+def admins():
+    if request.method == "POST":
+        # print(request.form)
+        category = db.select_one_category(request.form["categoryName"].lower())
+        if category == -1:
+            db.insert_category(request.form["categoryName"].lower())
+    return render_template("admins.html", menu = menu)
 
 if __name__ =="__main__":
     app.run(debug = True)
