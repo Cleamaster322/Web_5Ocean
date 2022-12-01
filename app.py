@@ -14,15 +14,13 @@ DATABASE = "db/5_Ocean.db"
 
 db = Database(DATABASE)
 db.init_db()
-categorysandfood = db.select_category_and_food()
-print(categorysandfood)
 # count = db.get_colons()
 # print(count)
 # db.add_food("dasd",3020,"dsad",1)
-
-@app.route("/", methods = ["POST","GET"])
+@app.route("/")
+@app.route("/main", methods = ["POST","GET"])
 def index():
-    categorys = db.select_category()
+    categorys = db.select_all_categorys()
     if request.method == "POST":
         print(request.form)
         # db.add_food(request.form["food_name"],request.form["Price"],request.form["Description"],request.form["idCategory"])
@@ -30,7 +28,7 @@ def index():
 
 @app.route("/categorys")
 def categorys():
-    categorys = db.select_category()
+    categorys = db.select_all_categorys()
     return render_template('categorys.html',categorys = categorys)
     
 @app.route("/categorysandfood")
@@ -40,13 +38,26 @@ def categorysandfood():
 
 @app.route("/menu/<category>")
 def menu(category):
-    categorysAll = db.select_category()
-    categorysandfood = db.select_category_and_food()
-    return  render_template("menu.html",categorysandfood = categorysandfood,categoryName = category,categorysAll=categorysAll)
+    categorysAll = db.select_all_categorys()
+    foodInfoAll = db.select_food_full_info()
+    return  render_template("menu.html",categoryName = category,categorysAll=categorysAll,foodInfoAll=foodInfoAll)
 
-# @app.route("/crabs")
-# def crabs():
-#     return render_template("crabs.html", menu = menu)
+@app.route("/desc")
+def desc():
+    return render_template("desc.html")
+
+@app.route("/reserve")
+def reserve():
+    return render_template("reserve.html")
+
+@app.route("/admins", methods = ["POST", "GET"])
+def admins():
+    if request.method == "POST":
+        # print(request.form)
+        category = db.select_one_category(request.form["categoryName"].lower())
+        if category == -1:
+            db.insert_category(request.form["categoryName"].lower())
+    return render_template("admins.html", menu = menu)
 
 if __name__ =="__main__":
     app.run(debug = True)
