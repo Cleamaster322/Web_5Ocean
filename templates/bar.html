@@ -26,12 +26,15 @@
       <div class="container">
         <div class="row">
           <div class="col-xs-12 col-sm-8 wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-            {% for dink in drinkInfoAll %}
-            {% if drinkInfoAll[drink]["nameCat"] == categoryName %}
+            {% for food in foodInfoAll %}
+            {% if foodInfoAll[food]["CategoryFood"] == categoryName %}
             <article class="blog-post style2">
               <div class="img-holder">
-                <a href=""><img src="../static/ImgdBar/{{foodInfoAll[food]['imgPath']}}.jpg" alt="image description"></a>
-                <!-- <a href=""><img src="../static/ImgFoot/error.png" alt="image description"></a> -->
+                {% if foodInfoAll[food]['imgPath'] != "error" %}
+                <a href=""><img src="../static/ImgFoot/{{foodInfoAll[food]['imgPath']}}.jpg" alt="image description"></a>
+                {% else %}
+                <a href=""><img src="../static/ImgFoot/error.png" alt="image description"></a>
+                {% endif %}
               </div>
               <div class="blog-txt">
                 <h2>{{food}}</h2>
