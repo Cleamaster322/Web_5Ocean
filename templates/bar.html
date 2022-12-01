@@ -26,21 +26,29 @@
       <div class="container">
         <div class="row">
           <div class="col-xs-12 col-sm-8 wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-            {% for drink in drinkInfoAll %}
-            {% if drinkInfoAll[drink]["nameCat"] == categoryName %}
+            {% for subCat in subCategory %}
+            {% if subCategory|length >1%}
+            <p class="aboutus2" style="margin-top: 10px!important; margin-bottom:10px!important">{{ subCat }}</p>
+            {% endif %}
+              {% for id in drinkInfoAll %}
+                {% if drinkInfoAll[id]["nameSubCat"] == subCat%}
+
+
             <article class="blog-post style2">
               <div class="img-holder">
-                <a href=""><img src="../static/ImgBar/{{drinkInfoAll[drink]['idDrink']}}.jpg" alt="image description"></a>
+                <img src="../static/ImgBar/{{id}}.jpg" alt="image description">
               </div>
               <div class="blog-txt">
-                <h2>{{drink}}</h2>
-                <p style="font-weight: 500;" >Белки: {{drinkInfoAll[drink]["protein"]}}. Жиры: {{drinkInfoAll[drink]["fats"]}}</p>
-                <p style="font-weight: 500;" >Углеводы: {{drinkInfoAll[drink]["carbohydrates"]}}. ККал: {{drinkInfoAll[drink]["kilocolories"]}}</p>
-                <p><h2>Описание</h2> <h3>{{drinkInfoAll[drink]["Description"]}}</h3></p>
-                <p><h2>Цена</h2> <h3>{{drinkInfoAll[drink]["price"]}}</h3></p>
+                <h2>{{drinkInfoAll[id]["nameDrink"]}}</h2>
+                <p style="font-weight: 500;" >Белки: {{drinkInfoAll[id]["protein"]}}. Жиры: {{drinkInfoAll[id]["fats"]}}</p>
+                <p style="font-weight: 500;" >Углеводы: {{drinkInfoAll[id]["carbohydrates"]}}. ККал: {{drinkInfoAll[id]["kilocolories"]}}</p>
+                <p><h2>Объем</h2> <h3>{{drinkInfoAll[id]["volume"]}}</h3></p>
+                <p><h2>Цена</h2> <h3>{{drinkInfoAll[id]["price"]}}</h3></p>
               </div>
             </article>
+
             {% endif %}
+            {% endfor %}
             {% endfor %}
           </div>
           <di v class="col-xs-12 col-sm-4 text-right sidebar wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">

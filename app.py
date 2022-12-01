@@ -48,9 +48,11 @@ def menu(category):
 @app.route("/bar/<category>")
 def bar(category):
     categorysAll = db.select_category_bar()
-    # print(categorysAll)
-    drinkInfoAll = db.select_bar_full()
-    return  render_template("bar.html",categoryName = category,categorysAll=categorysAll,drinkInfoAll=drinkInfoAll)
+    subCategory = db.select_subCategory_bar(category)
+    drinkInfoAll = db.select_bar_full(category)
+    print(drinkInfoAll)
+    # print(drinkInfoAll)
+    return  render_template("bar.html",categoryName = category,categorysAll=categorysAll,drinkInfoAll=drinkInfoAll,subCategory = subCategory)
 
 @app.route("/desc")
 def desc():

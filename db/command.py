@@ -21,7 +21,7 @@ select_categorys_and_food = """SELECT category.NameCat,eats.NameFood  FROM Categ
 Eats ON Eats.idCategory = Category.id
 order by category.id"""
 
-select_category_and_his_food = """SELECT category.NameCat,eats.NameFood  FROM Category JOIN Eats ON Eats.idCategory = Category.id WHERE(category.NameCat = '?')"""
+select_category_and_his_food = """SELECT category.NameCat,eats.NameFood  FROM Category JOIN Eats ON Eats.idCategory = Category.id WHERE category.NameCat = ? """
 
 select_food_info = """SELECT Eats.NameFood,Eats.proteins,Eats.fats,Eats.carbohydrates,Eats.kilocolories FROM Eats"""
 
@@ -43,6 +43,8 @@ SubCategory.Name FROM Eats LEFT join SubCategory on eats.idSubCategory = SubCate
 
 select_category_bar = """SELECT NameCat FROM Category WHERE NameCat != 'блюда' """
 
+select_subCategory_bar = """SELECT Name FROM SubCategory where SubCategory.CategoryId = (SELECT id FROM Category WHERE NameCat = ?)"""
+
 select_full_bar = """SELECT Drinks.id,
                             Drinks.Name,
                             Drinks.Volume, 
@@ -54,8 +56,7 @@ select_full_bar = """SELECT Drinks.id,
                             Drinks.structure, 
                             SubCategory.Name as NameSubCat, 
                             Category.NameCat 
-FROM Drinks LEFT JOIN SubCategory ON Drinks.idSubCategory = SubCategory.id LEFT JOIN Category ON Subcategory.CategoryId = category.id
-"""
+FROM Drinks LEFT JOIN SubCategory ON Drinks.idSubCategory = SubCategory.id LEFT JOIN Category ON Subcategory.CategoryId = category.id Where NameCat = ? """
 
 # create_main = """CREATE TABLE IF NOT EXISTS Main(
 #    id INTEGER PRIMARY KEY,

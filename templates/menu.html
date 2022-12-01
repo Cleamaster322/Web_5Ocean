@@ -31,9 +31,9 @@
             <article class="blog-post style2">
               <div class="img-holder">
                 {% if foodInfoAll[food]['imgPath'] != "error" %}
-                <a href=""><img src="../static/ImgFoot/{{foodInfoAll[food]['imgPath']}}.jpg" alt="image description"></a>
+                <img src="../static/ImgFoot/{{foodInfoAll[food]['imgPath']}}.jpg" alt="image description">
                 {% else %}
-                <a href=""><img src="../static/ImgFoot/error.png" alt="image description"></a>
+                <img src="../static/ImgFoot/error.png" alt="image description">
                 {% endif %}
               </div>
               <div class="blog-txt">
