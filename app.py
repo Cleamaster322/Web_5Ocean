@@ -42,6 +42,7 @@ def menu(category):
     categorysAll = db.select_all_categorys_Foods()
     print(categorysAll)
     foodInfoAll = db.select_food_full_info()
+    print(foodInfoAll)
     return  render_template("menu.html",categoryName = category,categorysAll=categorysAll,foodInfoAll=foodInfoAll)
 
 @app.route("/bar/<category>")

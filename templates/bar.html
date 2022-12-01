@@ -26,22 +26,18 @@
       <div class="container">
         <div class="row">
           <div class="col-xs-12 col-sm-8 wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-            {% for food in foodInfoAll %}
-            {% if foodInfoAll[food]["CategoryFood"] == categoryName %}
+            {% for drink in drinkInfoAll %}
+            {% if drinkInfoAll[drink]["nameCat"] == categoryName %}
             <article class="blog-post style2">
               <div class="img-holder">
-                {% if foodInfoAll[food]['imgPath'] != "error" %}
-                <a href=""><img src="../static/ImgFoot/{{foodInfoAll[food]['imgPath']}}.jpg" alt="image description"></a>
-                {% else %}
-                <a href=""><img src="../static/ImgFoot/error.png" alt="image description"></a>
-                {% endif %}
+                <a href=""><img src="../static/ImgBar/{{drinkInfoAll[drink]['idDrink']}}.jpg" alt="image description"></a>
               </div>
               <div class="blog-txt">
-                <h2>{{food}}</h2>
-                <p style="font-weight: 500;" >Белки: {{foodInfoAll[food]["protein"]}}. Жиры: {{foodInfoAll[food]["fats"]}}</p>
-                <p style="font-weight: 500;" >Углеводы: {{foodInfoAll[food]["carbohydrates"]}}. ККал: {{foodInfoAll[food]["kilocolories"]}}</p>
-                <p><h2>Описание</h2> <h3>{{foodInfoAll[food]["Description"]}}</h3></p>
-                <p><h2>Цена</h2> <h3>{{foodInfoAll[food]["price"]}}</h3></p>
+                <h2>{{drink}}</h2>
+                <p style="font-weight: 500;" >Белки: {{drinkInfoAll[drink]["protein"]}}. Жиры: {{drinkInfoAll[drink]["fats"]}}</p>
+                <p style="font-weight: 500;" >Углеводы: {{drinkInfoAll[drink]["carbohydrates"]}}. ККал: {{drinkInfoAll[drink]["kilocolories"]}}</p>
+                <p><h2>Описание</h2> <h3>{{drinkInfoAll[drink]["Description"]}}</h3></p>
+                <p><h2>Цена</h2> <h3>{{drinkInfoAll[drink]["price"]}}</h3></p>
               </div>
             </article>
             {% endif %}
@@ -54,7 +50,7 @@
               <ul class="list-unstyled widget-nav">
                 {% for cat in categorysAll%}
                 {% if cat != categoryName%}
-                <li><a href="/menu/{{cat}}">{{cat}}</a></li>
+                <li><a href="/bar/{{cat}}">{{cat}}</a></li>
                 {% endif %}
                 {% endfor %}
               </ul>
