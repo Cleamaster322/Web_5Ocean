@@ -14,6 +14,7 @@ DATABASE = "db/5_Ocean.db"
 
 db = Database(DATABASE)
 db.init_db()
+
 # count = db.get_colons()
 # print(count)
 # db.add_food("dasd",3020,"dsad",1)
@@ -39,8 +40,19 @@ def categorysandfood():
 @app.route("/menu/<category>")
 def menu(category):
     categorysAll = db.select_all_categorys_Foods()
+    print(categorysAll)
     foodInfoAll = db.select_food_full_info()
+    print(foodInfoAll)
     return  render_template("menu.html",categoryName = category,categorysAll=categorysAll,foodInfoAll=foodInfoAll)
+
+@app.route("/bar/<category>")
+def bar(category):
+    categorysAll = db.select_category_bar()
+    subCategory = db.select_subCategory_bar(category)
+    drinkInfoAll = db.select_bar_full(category)
+    print(drinkInfoAll)
+    # print(drinkInfoAll)
+    return  render_template("bar.html",categoryName = category,categorysAll=categorysAll,drinkInfoAll=drinkInfoAll,subCategory = subCategory)
 
 @app.route("/desc")
 def desc():

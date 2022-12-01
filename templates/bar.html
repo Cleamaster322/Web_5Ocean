@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="../static/css/hb.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="//capp.nicepage.com/3c9198698ecc54a74b7f2fd9f895f61126296300/main-libs.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+<body>
+  
+  <div class="hero-order bg-img justify-content-center" style="height: 100px!important;">
+    
+    <img src="../static/photo/img.svg" alt="" style="top: 0; width: 300px; height: 60px; margin-left: 25px">
+</div>
+<div style="margin-top: 25px;">
+  <a href="/main" style="text-decoration: none; color:black; margin-left: 190px; font-size: 20px; ">Back</a></div>
+
+<p class="aboutus2" style="margin-top: 10px!important; margin-bottom:10px!important">{{categoryName}}</p>
+   <form action="" method = "POST">
+    <div class="mt-blog-detail style1">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-8 wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
+            {% for subCat in subCategory %}
+            {% if subCategory|length >1%}
+            <p class="aboutus2" style="margin-top: 10px!important; margin-bottom:10px!important">{{ subCat }}</p>
+            {% endif %}
+              {% for id in drinkInfoAll %}
+                {% if drinkInfoAll[id]["nameSubCat"] == subCat%}
+
+
+            <article class="blog-post style2">
+              <div class="img-holder">
+                <img src="../static/ImgBar/{{id}}.jpg" alt="image description">
+              </div>
+              <div class="blog-txt">
+                <h2>{{drinkInfoAll[id]["nameDrink"]}}</h2>
+                <p style="font-weight: 500;" >Белки: {{drinkInfoAll[id]["protein"]}}. Жиры: {{drinkInfoAll[id]["fats"]}}</p>
+                <p style="font-weight: 500;" >Углеводы: {{drinkInfoAll[id]["carbohydrates"]}}. ККал: {{drinkInfoAll[id]["kilocolories"]}}</p>
+                <p><h2>Объем</h2> <h3>{{drinkInfoAll[id]["volume"]}}</h3></p>
+                <p><h2>Цена</h2> <h3>{{drinkInfoAll[id]["price"]}}</h3></p>
+              </div>
+            </article>
+
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+          </div>
+          <di v class="col-xs-12 col-sm-4 text-right sidebar wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
+            <!-- Category Widget of the Page -->
+            <section class="widget category-widget scrollwid">
+              <h3>Категории</h3>
+              <ul class="list-unstyled widget-nav">
+                {% for cat in categorysAll%}
+                {% if cat != categoryName%}
+                <li><a href="/bar/{{cat}}">{{cat}}</a></li>
+                {% endif %}
+                {% endfor %}
+              </ul>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+   </form>
+   
+</body>
+<script>sal();</script>
+</html>

@@ -2,6 +2,8 @@ body{
     margin: 0;
 }
 .footer_line{
+  position: fixed;
+  width: 100%;
     background-color:rgba(121, 119, 119, 0.801);
     height:150px;
     justify-content:center;
@@ -25,18 +27,40 @@ body{
   }
   
 
-  .fa-facebook {
-    background: #3B5998;
-    color: white;
-    
-  }
 
-  .fa-twitter {
-    background: #55ACEE;
-    color: white;
-  }
-
-  .fa-instagram {
-    background: #c01b52;
-    color: white;
-  }
+  .container{
+    height: 5vh;
+}
+.wrapper {
+    display: flex;
+    justify-content: right;
+    align-items:flex-start;
+    height: 100vh;
+}
+.icon-container {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    text-decoration: none;
+    justify-content: center;
+    border-radius: 50%;
+    -webkit-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+    margin-left: 20px;
+}
+.icon-container i{
+    font-size: 20px;
+}
+.icon-container-vk {
+    color: rgb(255, 255, 255);
+}
+.icon-container-twitter {
+    color: rgb(255, 255, 255);
+}
+.icon-container-instagram {
+    color: rgb(255, 255, 255);
+}

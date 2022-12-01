@@ -128,4 +128,47 @@ class Database:
                                 "CategoryFood":row[11],
                                 }
         return result
+
+    def select_category_bar(self):
+        result=[]
+        with self.get_db_connection() as conn:
+            cur = conn.cursor()
+            rows = cur.execute(select_category_bar)
+            rows = cur.fetchall()
+            
+            for row in rows:
+                result.append(row[0])
+        return result
+
+    
+    def select_bar_full(self, category):
+        result = {}
+        with self.get_db_connection() as conn:
+            cur = conn.cursor()
+            rows = cur.execute(select_full_bar,(category,))
+            # rows = cur.execute(select_category,(category,))
+            for row in rows:
+                # print(row[1])
+                # row[1] - Namedrink
+                result[row[0]]={"nameDrink":row[1],
+                                "volume":row[2],
+                                "price":row[3],
+                                "protein":row[4],
+                                "fats":row[5],
+                                "carbohydrates":row[6],
+                                "kilocolories":row[7],
+                                "structure":row[8],
+                                "nameSubCat":row[9],
+                                "nameCat":row[10],
+                                } 
+        return result
+
+    def select_subCategory_bar(self,category):
+        result = []
+        with self.get_db_connection() as conn:
+            cur = conn.cursor()
+            rows = cur.execute(select_subCategory_bar,(category,))
+            for row in rows:
+                result.append(row[0])
         
+        return result
