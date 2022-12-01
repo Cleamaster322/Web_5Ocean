@@ -40,11 +40,11 @@ class Database:
             cur.execute(insert_category,(category,))
         return
         
-    def select_all_categorys(self):
+    def select_all_categorys_Foods(self):
         result = []
         with self.get_db_connection() as conn:
             cur = conn.cursor()
-            cur.execute(select_all_categorys)
+            cur.execute(select_all_categorys_Foods)
             rows = cur.fetchall()
             for row in rows:
                 result.append(row[0])

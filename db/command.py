@@ -13,7 +13,7 @@ insert_category = """INSERT INTO category (nameCat) VALUES (?)"""
 
 insert_eats = """INSERT INTO eats (Name,Price,Description,idCategory) VALUES(?,?,?,?)"""
 
-select_all_categorys = """SELECT NameCat FROM Category"""
+select_all_categorys_Foods = """SELECT Name FROM SubCategory WHERE categoryid = 1"""
 
 select_category = """SELECT NameCat From Category WHERE nameCat = ?"""
 
@@ -40,7 +40,7 @@ SELECT Eats.ID,
         Eats.carbohydrates,
         Eats.kilocolories,
         Eats.imgPath,
-Category.NameCat FROM Eats LEFT join Category on eats.idCategory = Category.id """
+SubCategory.Name FROM Eats LEFT join SubCategory on eats.idSubCategory = SubCategory.id """
 
 """SELECT NameCat From Category WHERE nameCat = ?"""
 
