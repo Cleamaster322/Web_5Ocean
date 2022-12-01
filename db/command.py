@@ -28,21 +28,34 @@ select_food_info = """SELECT Eats.NameFood,Eats.proteins,Eats.fats,Eats.carbohyd
 select_food_disc = """SELECT Eats.NameFood, Eats.Description FROM Eats"""
 
 
-select_food_full_info = """
-SELECT Eats.ID,
-        Eats.NameFood,
-        Eats.Description,
-        Eats.CookingMethod,
-        Eats.FoodValue,
-        Eats.Price,
-        Eats.proteins,
-        Eats.fats,
-        Eats.carbohydrates,
-        Eats.kilocolories,
-        Eats.imgPath,
+select_food_full_info = """SELECT   Eats.ID,
+                                    Eats.NameFood,
+                                    Eats.Description,
+                                    Eats.CookingMethod,
+                                    Eats.FoodValue,
+                                    Eats.Price,
+                                    Eats.proteins,
+                                    Eats.fats,
+                                    Eats.carbohydrates,
+                                    Eats.kilocolories,
+                                    Eats.imgPath,
 SubCategory.Name FROM Eats LEFT join SubCategory on eats.idSubCategory = SubCategory.id """
 
-"""SELECT NameCat From Category WHERE nameCat = ?"""
+select_category_bar = """SELECT NameCat FROM Category WHERE NameCat != 'блюда' """
+
+select_full_bar = """SELECT Drinks.id,
+                            Drinks.Name,
+                            Drinks.Volume, 
+                            Drinks.Price, 
+                            Drinks.protein, 
+                            Drinks.fats, 
+                            Drinks.Carbohydrates, 
+                            Drinks.kilocalories, 
+                            Drinks.structure, 
+                            SubCategory.Name as NameSubCat, 
+                            Category.NameCat 
+FROM Drinks LEFT JOIN SubCategory ON Drinks.idSubCategory = SubCategory.id LEFT JOIN Category ON Subcategory.CategoryId = category.id
+"""
 
 # create_main = """CREATE TABLE IF NOT EXISTS Main(
 #    id INTEGER PRIMARY KEY,
