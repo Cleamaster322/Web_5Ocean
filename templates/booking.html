@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation form</title>
+    <link rel="stylesheet" href="../static/css/booking.css">
+</head>
+<body>
+    
+    <section class="banner">
+        <h2>ЗАРЕЗЕРВИРУЙ СВОЙ СТОЛИК СЕЙЧАС</h2>
+        <div class="card-container">
+            <div class="card-img">
+                <!-- <img here> -->
+            </div>
+
+            <div class="card-content">
+                <h3>Бронирование</h3>
+                <form>
+                    <div class="form-row">
+                        <!-- <select name = "days"> -->
+                            <input type="date" placeholder="Выберите день">
+                            <!-- <option value="day-select">Выберете день</option>
+                            <option value="Monday">Понедельник</option>
+                            <option value="Tuesday">Вторник</option>
+                            <option value="Wednesday">Среда</option>
+                            <option value="Thursday">Четверг</option>
+                            <option value="Friday">Пятница</option>
+                            <option value="Saturday">Суббота</option>
+                            <option value="Sunday">Воскресенье</option> -->
+                        <!-- </select> -->
+
+                        <select name = "hours">
+                            <option value="hour-select">Выберете время</option>
+                            <option value="11">11:00</option>
+                            <option value="11">12:00</option>
+                            <option value="11">13:00</option>
+                            <option value="11">14:00</option>
+                            <option value="11">15:00</option>
+                            <option value="11">16:00</option>
+                            <option value="11">17:00</option>
+                            <option value="11">18:00</option>
+                            <option value="11">19:00</option>
+                            <option value="11">20:00</option>
+                            <option value="11">21:00</option>
+                            <option value="11">22:00</option>
+                            <option value="11">23:00</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <input type="text" placeholder="Полное Имя">
+                        <input type="text" placeholder="Номер телефона">
+                    </div>
+
+                    <div class="booking-textarea">
+                        <textarea class="tablecenter" placeholder="Ваши пожелания" cols="30" rows="5" ></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <input type="number" placeholder="Количество человек" min="1">
+                        <input type="submit" value="Забронировать столик">
+                     </div>
+
+                </form>
+
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>
